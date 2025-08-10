@@ -1,0 +1,31 @@
+<?php
+$Species = isset($_POST['Species1']) ? $_POST['Species1'] : '';
+$Cell_Name1 = isset($_POST['Cell_Name1']) ? $_POST['Cell_Name1'] : '';
+$Cell_Name2 = isset($_POST['Cell_Name2']) ? $_POST['Cell_Name2'] : '';
+$input_sel = isset($_GET['input_sel']) ? $_GET['input_sel'] : '';
+$selects = array();
+if(!empty($Species))
+    $selects[] = "Species='$Species'";
+if(!empty($Cell_Name1))
+    $selects[] = "Cell_Name1='$Cell_Name1'";
+if(!empty($Cell_Name2))
+    $selects[] = "Cell_Name2='$Cell_Name2'";
+
+if(count($selects)>0)
+    $select = " where ".join(" and ",$selects);
+else
+    $select = "";
+include '../public/conn_php.php';
+$search="SELECT distinct $input_sel
+                from cccdb.main
+                 $select
+                 order by $input_sel";
+$search_result=mysqli_query($conn,$search);
+while($row = mysqli_fetch_assoc($search_result)){
+    $data[] = array(
+        "label" => $row[$input_sel]
+    );
+}
+//echo $search;
+echo json_encode($data);
+?>

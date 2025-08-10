@@ -1,0 +1,130 @@
+:root {
+  --primary-color: #6e8efb;
+  --secondary-color: #a777e3;
+  --accent-color: #ff7f00;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+.container {
+  padding: 0.2rem 0;
+}
+
+.sidebar-flat {
+  font-family: 'Segoe UI', sans-serif;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 7px;
+  color: #495057;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.nav-item:hover {
+  background: #e9ecef;
+  color: #40C9E3;
+}
+.nav-item i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.nav-item span {
+  font-size: 15px;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.panel {
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+.panel-heading {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+.panel-heading i {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+.panel-heading h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+.panel-body {
+  padding: 15px;
+  background-color: white;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .col-lg-3, .col-lg-6, .col-lg-9, .col-lg-12 {
+    padding: 0 15px;
+  }
+}
+
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  display: block;
+  padding: 8px 15px;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #40C9E3;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.pagination > li > a:hover {
+  z-index: 2;
+  color: #fff;
+  background-color: #40C9E3;
+  border-color: #40C9E3;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #40C9E3;
+  border-color: #40C9E3;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
